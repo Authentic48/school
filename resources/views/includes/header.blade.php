@@ -31,10 +31,8 @@
                     <li class="nav-item"><a href="{{ route('index') }}" class="nav-link active">Главная</a>
                     </li>
                     <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">О нас</a></li>
-                    <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">Курсы</a></li>
-                    <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">Блог</a></li>
-                    <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">События</a></li>
-                    <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">контакты</a></li>
+                    <li class="nav-item"><a href="{{ route('courses') }}" class="nav-link">Курсы</a></li>
+                    <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link">контакты</a></li>
                 </ul>
             </div>
         </nav><!-- END NAVBAR -->

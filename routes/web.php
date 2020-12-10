@@ -18,4 +18,24 @@ Route::get('/', [App\Http\Controllers\PageController::class, 'welcome'])->name('
 
 Route::get('/about', [App\Http\Controllers\PageController::class, 'about'])->name('about');
 
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'])->name('contact');
+
+Route::get('/courses', [App\Http\Controllers\CourseController::class, 'index'])->name('courses');
+
+Route::get('/course', [App\Http\Controllers\CourseController::class, 'show'])->name('course');
+
+Auth::routes();
+
+Route::middleware(['auth'])->middleware(['admin'])->prefix('admin')->group(function () {
+   
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('admin');
+
+});
+
+Route::middleware(['auth'])->middleware(['manager'])->prefix('manager')->group(function () {
+   
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('manager');
+    
+});  
+
 

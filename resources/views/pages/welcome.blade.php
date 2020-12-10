@@ -8,11 +8,7 @@
 
     @include('partials.about')
 
-    @include('partials.events')
-
     @include('partials.testimonial')
-
-    @include('partials.blog')
 
     @include('partials.patners')
     

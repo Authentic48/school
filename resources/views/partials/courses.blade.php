@@ -1,4 +1,3 @@
-<!--Start Courses Area Section-->
 <section class="popular_courses" id="popular_courses_page">
     <div class="container"> 
         <div class="row">
@@ -81,4 +80,4 @@
             </div>                                       
         </div>
     </div>
-</section><!-- ./ End Courses Area section -->
+</section>

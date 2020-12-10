@@ -27,16 +27,14 @@
                         <ul class="location_info quick_inf0">
                             <li><a href="{{ route('index') }}">Главная</a></li>
                             <li><a href="{{ route('about') }}">О нас</a></li>
-                            <li><a href="{{ route('about') }}">Курсы</a></li>
-                            <li><a href="{{ route('about') }}">Блог</a></li>
+                            <li><a href="{{ route('courses') }}">Курсы</a></li>
                         </ul>                         
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="footer_single_col information">
                         <ul class="quick_inf0">
-                            <li><a href="{{ route('about') }}">События</a></li>
-                            <li><a href="{{ route('about') }}">контакты</a></li>
+                            <li><a href="{{ route('contact') }}">контакты</a></li>
                             <li><a href="{{ route('about') }}">наши офисы</a></li>
                             <li><a href="{{ route('about') }}">Цены</a></li>
                         </ul>
