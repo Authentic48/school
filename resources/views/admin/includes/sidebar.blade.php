@@ -27,8 +27,8 @@
             </a>
           </li>
           <li>
-            <a href="#">
-              <i class="fa"></i> <span>Pricings</span>
+            <a href="{{ route('pricings.edit') }}">
+              <i class="fa"></i> <span>цены</span>
             </a>
           </li>
           <li>

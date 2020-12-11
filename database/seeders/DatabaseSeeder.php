@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Role;
-
+use App\Models\Pricing;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             RoleSeeder::class,
+            PricingSeeder::class,
         ]);
     }
 }

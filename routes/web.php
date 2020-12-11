@@ -22,6 +22,8 @@ Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'
 
 Route::get('/courses', [App\Http\Controllers\CourseController::class, 'index'])->name('courses');
 
+Route::get('/pricings', [App\Http\Controllers\PageController::class, 'pricing'])->name('pricings');
+
 Route::get('/courses/{slug}', [App\Http\Controllers\CourseController::class, 'show'])->name('courses.show');
 
 Auth::routes();
@@ -49,6 +51,8 @@ Route::middleware(['auth'])->middleware(['manager'])->prefix('manager')->group(f
     Route::get('/reviews/{id}/edit', [App\Http\Controllers\ReviewController::class, 'edit'])->name('reviews.edit');
     Route::patch('/reviews/{id}', [App\Http\Controllers\ReviewController::class, 'update'])->name('reviews.update');
     Route::delete('/reviews/{id}', [App\Http\Controllers\ReviewController::class, 'destroy'])->name('reviews.delete');
+    Route::get('/pricings', [App\Http\Controllers\PageController::class, 'pricingEdit'])->name('pricings.edit');
+    Route::patch('/pricings', [App\Http\Controllers\PageController::class, 'pricingUpdate'])->name('pricings.update');
 });  
 
 

@@ -12,7 +12,7 @@
                     <div class="title">
                         <h2>Заполните заявку</h2>
                         <p>Остались вопросы или решили записаться? Заполните форму мы с вами свяжемся!</p>  
-                    </div><!-- ends: .section-header -->
+                    </div>
                     <div class="get_s_btn">
                         <a href="#" title="">применить сейчас</a>
                     </div>
@@ -36,7 +36,7 @@
                         <ul class="quick_inf0">
                             <li><a href="{{ route('contact') }}">контакты</a></li>
                             <li><a href="{{ route('about') }}">наши офисы</a></li>
-                            <li><a href="{{ route('about') }}">Цены</a></li>
+                            <li><a href="{{ route('pricings') }}">Цены</a></li>
                         </ul>
                     </div>
                 </div>
@@ -66,4 +66,4 @@
         <span class="shape_6"></span>
     </div>
     <img src="images/shapes/footer_bg_shpe_1.png" alt="" class="shapes1_footer">
-</footer><!-- End Footer -->
+</footer>
