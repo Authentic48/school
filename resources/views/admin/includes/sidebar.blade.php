@@ -16,29 +16,19 @@
           </a>
           @endif
         </li>
-        <li>
-            <a>
-              <i class="fa"></i> <span>Blog</span>
+          <li>
+            <a href="{{ route('manager.courses') }}">
+              <i class="fa fa-book"></i> <span>курсы</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('manager.reviews') }}">
+              <i class="fa fa-child"></i><span>отзывы</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <i class="fa "></i> <span>Events</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa "></i> <span>Courses</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa "></i> <span>Testimonials</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa "></i> <span>Pricings</span>
+              <i class="fa"></i> <span>Pricings</span>
             </a>
           </li>
           <li>
