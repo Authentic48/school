@@ -12,10 +12,17 @@
                     <div class="login_info">
                         <ul class="d-flex">
                             @if (Auth::check())
-                            <li class="nav-item"><a href="#" class="nav-link sign-in js-modal-show"><i class="flaticon-user-male-black-shape-with-plus-sign"></i>Admin</a></li>
+                            <li class="nav-item"> 
+                                @if (Auth::user()->hasRole('manager'))
+                                <a href="{{ route('manager') }}" class="nav-link sign-in js-modal-show"><i class="flaticon-user-male-black-shape-with-plus-sign"></i>Admin</a>
+                                @endif
+                                @if (Auth::user()->hasRole('admin'))
+                                <a href="{{ route('admin') }}" class="nav-link sign-in js-modal-show"><i class="flaticon-user-male-black-shape-with-plus-sign"></i>Admin</a>
+                                @endif
+                            </li>
                             @endif
                         </ul>
-                        <a href="#" title="" class="apply_btn">применить сейчас</a>
+                        <a href="{{ route('application') }}" title="" class="apply_btn">применить сейчас</a>
                     </div>
                 </div>
             </div>
@@ -32,7 +39,7 @@
                     </li>
                     <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">О нас</a></li>
                     <li class="nav-item"><a href="{{ route('courses') }}" class="nav-link">Курсы</a></li>
-                    <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link">контакты</a></li>
+                    <li class="nav-item"><a href="{{ route('branches') }}" class="nav-link">Наш филиали</a></li>
                 </ul>
             </div>
         </nav><!-- END NAVBAR -->

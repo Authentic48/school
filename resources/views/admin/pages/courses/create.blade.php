@@ -39,24 +39,6 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>учебник</label>
-                            <input type="text" class="form-control" placeholder="учебник" name="book" value="{{ old('book') }}">
-                            @error('book')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label>Длительность курса</label>
-                            <input type="text" class="form-control" placeholder="Длительность курса" name="duration" value="{{ old('duration') }}">
-                            @error('duration')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
                             <label for="">Описание курса</label>
                             <textarea id="editor1" rows="10" cols="80" name="description">{{ old('description') }}</textarea>
                             @error('description')

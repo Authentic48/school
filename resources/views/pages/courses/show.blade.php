@@ -30,13 +30,29 @@
                         </div>
                         <div class="features_items">
                             <ul class="list-unstyled">
-                                <li><span>учебники:  {{ $course->book }}</span></li>
-                                <li><span>продолжительность:  {{ $course->duration }}</span></li>
                                 <li><span>Уровень:  {{ $course->level }}</span></li>
                             </ul>
                         </div>
                     </div>
+                    <div class="recent_post_wrapper popular_courses_post widget_single">
+                        <div class="items-title">
+                            <h3 class="title">Наши популярные курсы</h3>
+                        </div>
+                       @foreach ($courses as $course)
+                       <div class="single-post">
+                        <div class="recent_img">
+                             <a href="{{ $course->title }}"><img src="{{ Storage::disk('do_spaces')->url($course->image) }}" alt="" class="img-fluid"></a>
+                        </div>
+                        <div class="post_title">
+                            <a href="{{ route('courses.show', $course->slug) }}">{{ $course->title }}</a>
+                        </div>
+                    </div>
+                       @endforeach
+                    </div>
                 </div>
             </div>
 </section>
+
+@include('partials.application')
+
 @endsection

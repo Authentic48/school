@@ -12,12 +12,6 @@
                             <h3><a href="{{ route('courses.show', $course->slug) }}">{{ $course->title }}</a></h3>
                             <div class="teachers_name">{{ $course->level }}</div>
                         </div>
-                        <div class="courses_info">
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-calendar-alt"></i>{{ $course->duration }}</li>
-                                <li><i class="fas fa-book"></i>{{ $course->book }}</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>

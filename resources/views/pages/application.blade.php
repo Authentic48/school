@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    
-   @include('partials.contact')
-   
+
+  @include('partials.application')
+  
 @endsection

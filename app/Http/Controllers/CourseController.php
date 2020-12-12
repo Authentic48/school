@@ -56,17 +56,13 @@ class CourseController extends Controller
         $request->validate([
             'title' => ['required'],
             'level' => ['required'],
-            'duration' => ['required'],
             'description' => ['required'],
             'image' => ['required'],
-            'book' => ['required'],
         ],$messages);
 
         $course = New Course();
         $course->title = $request->title;
         $course->level = $request->level;
-        $course->duration = $request->duration;
-        $course->book = $request->book;
         $course->description = $request->description;
         $course->slug = substr(number_format(time() * rand(),0,'',''),0,10);
         if($request->has('image'))
@@ -90,7 +86,8 @@ class CourseController extends Controller
     public function show($slug)
     {
         $course = Course::where('slug', $slug)->first();
-        return view('pages.courses.show', compact('course'));
+        $courses = Course::latest()->where('slug' ,'!=', $course->slug)->take(5)->get();
+        return view('pages.courses.show', compact('course', 'courses'));
     }
 
     /**
@@ -123,14 +120,12 @@ class CourseController extends Controller
             'level' => ['required'],
             'duration' => ['required'],
             'description' => ['required'],
-            'book' => ['required'],
         ],$messages);
 
         $course = Course::where('slug', $slug)->first();
         $course->title = $request->title;
         $course->level = $request->level;
         $course->duration = $request->duration;
-        $course->book = $request->book;
         $course->description = $request->description;
         if($request->has('image'))
         {

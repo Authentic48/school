@@ -1,4 +1,46 @@
-<section class="about_top_wrapper">
+<section class="about_us">
+    <div class="container">            
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-7 col-lg-7">
+                <div class="about_title">
+                    <span>Обучение в школе</span>
+                    <h2>Гарантия качества подтверждена
+                        ATEEL Великобритания</h2>
+                 </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-5 col-lg-5 p-0">
+                <div class="banner_about">
+                    <img src="{{ asset('assets/images/banner/about_thinking.jpg') }}" alt="" class="img-fluid">
+                 </div>
+            </div>
+        </div>        
+        <div class="row about_content_wrapper">
+            <div class="col-12 col-sm-12 col-md-5 col-lg-5 p-0">
+                <div class="about_banner_down">
+                    <img src="{{ asset('assets/images/blog/blog_3.jpg') }}" alt="" class="img-fluid">
+                 </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-7 col-lg-7">
+                <div class="about_content">
+                    <p>Преподаватели школы О’кей постоянно повышают уровень
+                        своей квалификации на регулярных семинарах, вебинарах и
+                        тренингах, а также и уровень владения иностранным языком,
+                        проходят стажировки в России и за рубежом, сдают
+                        международные экзамены.
+                        Помимо основной программы обучения существуют
+                        и дополнительные – это языковые погружения и
+                        поездки, что позволяет ученикам быстрее
+                        
+                        разговориться.
+                    </p>
+                 </div>
+            </div>
+        </div>
+    </div>    
+</section>
+
+
+<!-- <section class="about_top_wrapper">
     <div class="container">            
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-5">
@@ -37,4 +79,4 @@
             </div>
         </div>
     </div>
-</section><!-- End about_top_wrapper -->
+</section> End about_top_wrapper -->

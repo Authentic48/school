@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">курсы</h3>
+                    <h3 class="box-title">Reviews</h3>
                 </div>
                 <form method="POST" action="{{ route('reviews.store') }}" enctype="multipart/form-data">
                     @csrf

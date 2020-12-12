@@ -8,47 +8,36 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">курсы</h3>
                 </div>
-                <form method="POST" action="{{ route('courses.update', $course->slug) }}" enctype="multipart/form-data">
-                    @method('PATCH')
+                <form method="POST" action="{{ route('branches.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="box-body">
                         <div class="form-group">
-                            <label>Название курса</label>
-                            <input type="text" class="form-control" placeholder="Название курса" name="title" value="{{ old('title', $course->title) }}">
-                            @error('title')
+                            <label>город</label>
+                            <input type="text" class="form-control" placeholder="город" name="city" value="{{ old('city') }}">
+                            @error('city')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Уровень</label>
-                            <input type="text" class="form-control" placeholder="Уровень" name="level"value="{{ old('level', $course->level) }}">
-                            @error('level')
+                            <label>адрес</label>
+                            <input type="text" class="form-control" placeholder="адрес" name="address" value="{{ old('address') }}">
+                            @error('address')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputFile">Фотография курса</label>
-                            <input type="file" name="image">
-                            @error('image')
+                            <label>Телефон</label>
+                            <input type="text" class="form-control" placeholder="Телефон" name="phone" value="{{ old('phone') }}">
+                            @error('phone')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <label for="">Описание курса</label>
-                            <textarea id="editor1" rows="10" cols="80" name="description">{{ old('description', $course->description) }}</textarea>
-                            @error('description')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                    </div>
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary">сохранять</button>
                     </div>

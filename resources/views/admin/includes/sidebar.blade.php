@@ -28,17 +28,17 @@
           </li>
           <li>
             <a href="{{ route('pricings.edit') }}">
-              <i class="fa"></i> <span>цены</span>
+              <i class="fa fa-money"></i> <span>цены</span>
             </a>
           </li>
           <li>
-            <a href="#">
-              <i class="fa"></i> <span>Applications</span>
+            <a href="{{ route('manager.applications') }}">
+              <i class="fa fa-pencil-square-o"></i> <span>Applications</span>
             </a>
           </li>
           <li>
-            <a href="#">
-              <i class="fa"></i> <span>Offices</span>
+            <a href="{{ route('manager.branches') }}">
+              <i class="fa fa-location-arrow"></i> <span>Наш филиали</span>
             </a>
           </li>
       </ul>

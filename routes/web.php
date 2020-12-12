@@ -18,13 +18,15 @@ Route::get('/', [App\Http\Controllers\PageController::class, 'welcome'])->name('
 
 Route::get('/about', [App\Http\Controllers\PageController::class, 'about'])->name('about');
 
-Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'])->name('contact');
-
 Route::get('/courses', [App\Http\Controllers\CourseController::class, 'index'])->name('courses');
 
 Route::get('/pricings', [App\Http\Controllers\PageController::class, 'pricing'])->name('pricings');
 
+Route::get('/branches', [App\Http\Controllers\PageController::class, 'branch'])->name('branches');
+
 Route::get('/courses/{slug}', [App\Http\Controllers\CourseController::class, 'show'])->name('courses.show');
+
+Route::get('/application', [App\Http\Controllers\ApplicationController::class, 'create'])->name('application');
 
 Auth::routes();
 
@@ -53,6 +55,18 @@ Route::middleware(['auth'])->middleware(['manager'])->prefix('manager')->group(f
     Route::delete('/reviews/{id}', [App\Http\Controllers\ReviewController::class, 'destroy'])->name('reviews.delete');
     Route::get('/pricings', [App\Http\Controllers\PageController::class, 'pricingEdit'])->name('pricings.edit');
     Route::patch('/pricings', [App\Http\Controllers\PageController::class, 'pricingUpdate'])->name('pricings.update');
+
+    Route::get('/branches', [App\Http\Controllers\BranchController::class, 'index'])->name('manager.branches');
+    Route::get('/branches/create', [App\Http\Controllers\BranchController::class, 'create'])->name('branches.create');
+    Route::post('/branches', [App\Http\Controllers\BranchController::class, 'store'])->name('branches.store');
+    Route::get('/branches/{id}/edit', [App\Http\Controllers\BranchController::class, 'edit'])->name('branches.edit');
+    Route::patch('/branches/{id}', [App\Http\Controllers\BranchController::class, 'update'])->name('branches.update');
+    Route::delete('/branches/{id}', [App\Http\Controllers\BranchController::class, 'destroy'])->name('branches.delete');
+
+    Route::get('/applications', [App\Http\Controllers\ApplicationController::class, 'index'])->name('manager.applications');
+    Route::post('/applications', [App\Http\Controllers\ApplicationController::class, 'store'])->name('applications.store');
+    Route::get('/applications/{id}/edit', [App\Http\Controllers\ApplicationController::class, 'edit'])->name('applications.edit');
+    Route::patch('/applications/{id}', [App\Http\Controllers\ApplicationController::class, 'update'])->name('applications.update');
 });  
 
 

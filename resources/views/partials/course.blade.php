@@ -5,7 +5,7 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="sub_title">
                     <h2>Наши популярные курсы</h2>
-                    <p>Lorem ipsum dolor sit amet mollis felis dapibus arcu donec viverra. Pede phasellus eget. Etiam maecenas vel vici quis dictum rutrum nec nisi et.</p>  
+
                 </div>
             </div>
             @foreach ($courses as $course)
@@ -19,12 +19,6 @@
                         <div class="courses_title">
                             <h3><a href="{{ route('courses.show', $course->slug) }}">{{ $course->title }}</a></h3>
                             <div class="teachers_name">{{ $course->level }}</div>
-                        </div>
-                        <div class="courses_info">
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-calendar-alt"></i>{{ $course->duration }}</li>
-                                <li><i class="fas fa-book"></i>{{ $course->book }}</li>
-                            </ul>
                         </div>
                     </div>
                 </div>

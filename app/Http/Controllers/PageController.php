@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Review;
 use App\Models\Pricing;
+use App\Models\Branch;
 
 class PageController extends Controller
 {
@@ -19,6 +20,12 @@ class PageController extends Controller
     public function about()
     {
         return view('pages.about');
+    }
+
+    public function branch()
+    {
+        $branches = Branch::All();
+        return view('pages.branche', compact('branches'));
     }
 
     public function pricing()

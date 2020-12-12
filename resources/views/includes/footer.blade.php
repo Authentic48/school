@@ -14,7 +14,7 @@
                         <p>Остались вопросы или решили записаться? Заполните форму мы с вами свяжемся!</p>  
                     </div>
                     <div class="get_s_btn">
-                        <a href="#" title="">применить сейчас</a>
+                        <a href="{{ route('application') }}" title="">применить сейчас</a>
                     </div>
                     <img src="images/shapes/bubble_shpe_2.png" alt="" class="shape_t_1"> 
                 </div>                                
@@ -27,16 +27,15 @@
                         <ul class="location_info quick_inf0">
                             <li><a href="{{ route('index') }}">Главная</a></li>
                             <li><a href="{{ route('about') }}">О нас</a></li>
-                            <li><a href="{{ route('courses') }}">Курсы</a></li>
                         </ul>                         
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="footer_single_col information">
                         <ul class="quick_inf0">
-                            <li><a href="{{ route('contact') }}">контакты</a></li>
-                            <li><a href="{{ route('about') }}">наши офисы</a></li>
+                            <li><a href="{{ route('branches') }}">Наш филиали</a></li>
                             <li><a href="{{ route('pricings') }}">Цены</a></li>
+                            <li><a href="{{ route('courses') }}">Курсы</a></li>
                         </ul>
                     </div>
                 </div>
