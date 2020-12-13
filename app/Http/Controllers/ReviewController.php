@@ -46,7 +46,7 @@ class ReviewController extends Controller
             'name' => ['required'],
             'profession' => ['required'],
             'description' => ['required'],
-            'image' => ['required'],
+            'image' => ['required|mimes:jpeg,bmp,png'],
         ],$messages);
 
         $review = New Review();

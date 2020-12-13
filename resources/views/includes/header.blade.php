@@ -32,7 +32,7 @@
 <div class="edu_nav">
     <div class="container">
         <nav class="navbar navbar-expand-md navbar-light bg-faded">
-            <a class="navbar-brand" href="/"><img src="images/logo.jpg" alt="logo"></a>
+            <a class="navbar-brand" href="/"><img src="{{ asset('assets/images/logo1.png') }}" alt="logo"></a>
             <div class="collapse navbar-collapse main-menu" id="navbarSupportedContent">
                 <ul class="navbar-nav nav lavalamp ml-auto menu">
                     <li class="nav-item"><a href="{{ route('index') }}" class="nav-link active">Главная</a>
@@ -42,6 +42,6 @@
                     <li class="nav-item"><a href="{{ route('branches') }}" class="nav-link">Наш филиали</a></li>
                 </ul>
             </div>
-        </nav><!-- END NAVBAR -->
+        </nav>
     </div> 
 </div>
