@@ -20,7 +20,7 @@ Route::get('/about', [App\Http\Controllers\PageController::class, 'about'])->nam
 
 Route::get('/courses', [App\Http\Controllers\CourseController::class, 'index'])->name('courses');
 
-Route::get('/pricings', [App\Http\Controllers\c::class, 'pricing'])->name('pricings');
+Route::get('/pricings', [App\Http\Controllers\PageController::class, 'pricing'])->name('pricings');
 
 Route::get('/branches', [App\Http\Controllers\PageController::class, 'branch'])->name('branches');
 
