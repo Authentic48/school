@@ -28,7 +28,11 @@ Route::get('/courses/{slug}', [App\Http\Controllers\CourseController::class, 'sh
 
 Route::get('/application', [App\Http\Controllers\ApplicationController::class, 'create'])->name('application');
 
-Auth::routes();
+Auth::routes([
+    'register' => false, // Registration Routes...
+    'reset' => false, // Password Reset Routes...
+    'verify' => false, // Email Verification Routes...
+  ]);
 
 
 
