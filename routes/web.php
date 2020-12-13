@@ -20,13 +20,15 @@ Route::get('/about', [App\Http\Controllers\PageController::class, 'about'])->nam
 
 Route::get('/courses', [App\Http\Controllers\CourseController::class, 'index'])->name('courses');
 
-Route::get('/pricings', [App\Http\Controllers\PageController::class, 'pricing'])->name('pricings');
+Route::get('/pricings', [App\Http\Controllers\c::class, 'pricing'])->name('pricings');
 
 Route::get('/branches', [App\Http\Controllers\PageController::class, 'branch'])->name('branches');
 
 Route::get('/courses/{slug}', [App\Http\Controllers\CourseController::class, 'show'])->name('courses.show');
 
 Route::get('/application', [App\Http\Controllers\ApplicationController::class, 'create'])->name('application');
+
+Route::get('/Our-team', [App\Http\Controllers\PageController::class, 'team'])->name('team');
 
 Auth::routes([
     'register' => false, // Registration Routes...
@@ -71,6 +73,13 @@ Route::middleware(['auth'])->middleware(['manager'])->prefix('manager')->group(f
     Route::post('/applications', [App\Http\Controllers\ApplicationController::class, 'store'])->name('applications.store');
     Route::get('/applications/{id}/edit', [App\Http\Controllers\ApplicationController::class, 'edit'])->name('applications.edit');
     Route::patch('/applications/{id}', [App\Http\Controllers\ApplicationController::class, 'update'])->name('applications.update');
+
+    Route::get('/teams', [App\Http\Controllers\TeamController::class, 'index'])->name('manager.teams');
+    Route::get('/teams/create', [App\Http\Controllers\TeamController::class, 'create'])->name('teams.create');
+    Route::post('/teams', [App\Http\Controllers\TeamController::class, 'store'])->name('teams.store');
+    Route::get('/teams/{id}/edit', [App\Http\Controllers\TeamController::class, 'edit'])->name('teams.edit');
+    Route::patch('/teams/{id}', [App\Http\Controllers\TeamController::class, 'update'])->name('teams.update');
+    Route::delete('/teams/{id}', [App\Http\Controllers\TeamController::class, 'destroy'])->name('teams.delete');
 });  
 
 

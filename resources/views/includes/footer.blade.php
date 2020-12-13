@@ -27,6 +27,7 @@
                         <ul class="location_info quick_inf0">
                             <li><a href="{{ route('index') }}">Главная</a></li>
                             <li><a href="{{ route('about') }}">О нас</a></li>
+                            <li><a href="{{ route('team') }}">Наша команда</a></li>
                         </ul>                         
                     </div>
                 </div>

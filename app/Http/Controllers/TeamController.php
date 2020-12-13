@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Review;
 use Illuminate\Http\Request;
+use App\Models\Team;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-class ReviewController extends Controller
+class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        $reviews = Review::All();
-        return view('admin.pages.reviews.index', compact('reviews'));
+        $teams = Team::latest()->get();
+        return view('admin.pages.team.index', compact('teams'));
     }
 
     /**
@@ -27,7 +27,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.reviews.create');
+        return view('admin.pages.team.create');
     }
 
     /**
@@ -45,14 +45,12 @@ class ReviewController extends Controller
         $request->validate([
             'name' => ['required'],
             'profession' => ['required'],
-            'description' => ['required'],
-            'image' => ['required', 'mimes:jpeg,bmp,png'],
+            'image' => ['required' ,' mimes:jpeg,bmp,png'],
         ],$messages);
 
-        $review = New Review();
-        $review->name = $request->name;
-        $review->description = $request->description;
-        $review->profession = $request->profession;
+        $team = New Team();
+        $team->name = $request->name;
+        $team->profession = $request->profession;
         
         if($request->has('image'))
         {
@@ -60,20 +58,19 @@ class ReviewController extends Controller
             $name = Str::slug($request->input('name')).'_'.time();
             $folder = '/images'; 
             $filePath = Storage::disk('do_spaces')->putFileAs($folder, $image, $name, 'public');
-            $review->image = $filePath;
+            $team->image = $filePath;
         }
-        $review->save();
-        return redirect()->route('manager.reviews')->with(['status' => 'отзывы успешно создан']);
-
+        $team->save();
+        return redirect()->route('manager.teams')->with(['status' => 'успешно создан']);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Review  $review
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Review $review)
+    public function show($id)
     {
         //
     }
@@ -81,20 +78,20 @@ class ReviewController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Review  $review
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $review = Review::findOrFail($id);
-        return view('admin.pages.reviews.edit', compact('review'));
+        $team = Team::findOrFail($id);
+        return view('admin.pages.team.edit', compact('team'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Review  $review
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -106,13 +103,12 @@ class ReviewController extends Controller
         $request->validate([
             'name' => ['required'],
             'profession' => ['required'],
-            'description' => ['required'],
+            'image' => [' mimes:jpeg,bmp,png'],
         ],$messages);
 
-        $review = Review::findOrFail($id);
-        $review->name = $request->name;
-        $review->description = $request->description;
-        $review->profession = $request->profession;
+        $team = Team::findOrFail($id);
+        $team->name = $request->name;
+        $team->profession = $request->profession;
         
         if($request->has('image'))
         {
@@ -120,24 +116,23 @@ class ReviewController extends Controller
             $name = Str::slug($request->input('name')).'_'.time();
             $folder = '/images'; 
             $filePath = Storage::disk('do_spaces')->putFileAs($folder, $image, $name, 'public');
-            $review->image = $filePath;
+            $team->image = $filePath;
         }
-        $review->save();
-        return redirect()->route('manager.reviews')->with(['status' => 'отзывы успешно обновлено']);
+        $team->save();
+        return redirect()->route('manager.teams')->with(['status' => 'Успешно Обновлено']);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Review  $review
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $review = Review::findOrFail($id);
-        $review->delete();
+        $team = Team::findOrFail($id);
+        $team->delete();
 
-        return redirect()->route('manager.reviews')->with(['status' => 'отзывы успешно удалено']);
-
+        return redirect()->route('manager.teams')->with(['status' => 'удалено успешно']);
     }
 }

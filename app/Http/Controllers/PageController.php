@@ -7,6 +7,7 @@ use App\Models\Course;
 use App\Models\Review;
 use App\Models\Pricing;
 use App\Models\Branch;
+use App\Models\Team;
 
 class PageController extends Controller
 {
@@ -26,6 +27,12 @@ class PageController extends Controller
     {
         $branches = Branch::All();
         return view('pages.branche', compact('branches'));
+    }
+
+    public function team()
+    {
+        $teams = Team::All();
+        return view('pages.team', compact('teams'));
     }
 
     public function pricing()

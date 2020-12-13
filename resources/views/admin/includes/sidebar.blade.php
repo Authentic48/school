@@ -11,8 +11,8 @@
         </li>
         <li class="active">
           @if (Auth::user()->hasRole('manager'))
-          <a href="/manager">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          <a href="/">
+            <i class="fa fa-dashboard"></i> <span>Website</span>
           </a>
           @endif
         </li>
@@ -39,6 +39,11 @@
           <li>
             <a href="{{ route('manager.branches') }}">
               <i class="fa fa-location-arrow"></i> <span>Наш филиали</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('manager.teams') }}">
+              <i class="fa fa-child"></i> <span>Наша команда</span>
             </a>
           </li>
       </ul>
