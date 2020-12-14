@@ -45,7 +45,7 @@
                                             <input class="form-control @error('phone') is-invalid @enderror"
                                                 name="phone" placeholder="ваш номер телефона" value="{{ old('phone') }}"
                                                 type="text">
-                                            @error('status')
+                                            @error('phone')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
