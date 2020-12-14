@@ -27,6 +27,7 @@ Route::get('/branches', [App\Http\Controllers\PageController::class, 'branch'])-
 Route::get('/courses/{slug}', [App\Http\Controllers\CourseController::class, 'show'])->name('courses.show');
 
 Route::get('/application', [App\Http\Controllers\ApplicationController::class, 'create'])->name('application');
+Route::post('/applications', [App\Http\Controllers\ApplicationController::class, 'store'])->name('applications.store');
 
 Route::get('/Our-team', [App\Http\Controllers\PageController::class, 'team'])->name('team');
 
@@ -70,7 +71,6 @@ Route::middleware(['auth'])->middleware(['manager'])->prefix('manager')->group(f
     Route::delete('/branches/{id}', [App\Http\Controllers\BranchController::class, 'destroy'])->name('branches.delete');
 
     Route::get('/applications', [App\Http\Controllers\ApplicationController::class, 'index'])->name('manager.applications');
-    Route::post('/applications', [App\Http\Controllers\ApplicationController::class, 'store'])->name('applications.store');
     Route::get('/applications/{id}/edit', [App\Http\Controllers\ApplicationController::class, 'edit'])->name('applications.edit');
     Route::patch('/applications/{id}', [App\Http\Controllers\ApplicationController::class, 'update'])->name('applications.update');
 
