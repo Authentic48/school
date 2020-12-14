@@ -42,8 +42,8 @@
                                     <div class="col-12 col-xs-12 col-md-12">
                                         <div class="form-group">
                                             <label></label>
-                                            <input class="form-control @error('status') is-invalid @enderror"
-                                                name="status" placeholder="ваш номер телефона" value="{{ old('status') }}"
+                                            <input class="form-control @error('phone') is-invalid @enderror"
+                                                name="phone" placeholder="ваш номер телефона" value="{{ old('phone') }}"
                                                 type="text">
                                             @error('status')
                                             <span class="invalid-feedback" role="alert">
