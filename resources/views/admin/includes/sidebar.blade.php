@@ -27,11 +27,6 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('pricings.edit') }}">
-              <i class="fa fa-money"></i> <span>цены</span>
-            </a>
-          </li>
-          <li>
             <a href="{{ route('manager.applications') }}">
               <i class="fa fa-pencil-square-o"></i> <span>Applications</span>
             </a>
